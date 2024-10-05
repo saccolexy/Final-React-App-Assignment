@@ -1,34 +1,35 @@
 // src/components/AddItem.tsx
-
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import { TodoItem } from '../data';
+import { TodoItem } from '../data'; // Ensure this import is correct
 
 interface AddItemProps {
   onAdd: (item: TodoItem) => void;
 }
 
 const AddItem: React.FC<AddItemProps> = ({ onAdd }) => {
-  const [task, setTask] = useState('');
-  const [description, setDescription] = useState('');
+  const [task, setTask] = useState(''); // State for task
+  const [description, setDescription] = useState(''); // State for description
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Ensure task and description are included in validation
     if (task && description) {
       const newItem: TodoItem = {
-        id: Date.now(),
+        id: Date.now(), // Placeholder ID
         task,
         description,
         completed: false,
       };
       onAdd(newItem);
-      setTask('');
-      setDescription('');
+      setTask(''); // Reset task
+      setDescription(''); // Reset description
     }
   };
 
   return (
     <Form onSubmit={handleSubmit}>
+      {/* Removed title Form.Group */}
       <Form.Group controlId="formTask">
         <Form.Label>Task</Form.Label>
         <Form.Control
