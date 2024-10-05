@@ -1,0 +1,36 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "Grocery Shopping",
+      "task": "Buy groceries for the week",
+      "description": "Include fruits, vegetables, and snacks.",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Laundry",
+      "task": "Do the laundry",
+      "description": "Wash clothes and hang them to dry.",
+      "completed": false
+    },
+    {
+      "id": 1728141906621,
+      "task": "walk the dog",
+      "description": "take arlo for a walk",
+      "completed": false
+    },
+    {
+      "id": 1728143877200,
+      "task": "meditate",
+      "description": "meditate for 30 minutes",
+      "completed": false
+    },
+    {
+      "id": 1728144324728,
+      "task": "read a book",
+      "description": "read for 20 minutes",
+      "completed": false
+    }
+  ]
+}

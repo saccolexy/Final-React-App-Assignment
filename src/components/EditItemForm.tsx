@@ -4,7 +4,7 @@ import { TodoItem } from '../data';
 import { updateTodo } from '../services/api';
 
 interface EditItemFormProps {
-  item: TodoItem;
+  item: TodoItem; // Ensure this is defined
   onEdit: (updatedItem: TodoItem) => void;
 }
 
@@ -14,11 +14,17 @@ const EditItemForm: React.FC<EditItemFormProps> = ({ item, onEdit }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const updatedItem = { ...item, task, description };
+    const updatedItem = { ...item, task, description }; // Ensure `item` contains a valid `id`
+
+    console.log('Updating item:', updatedItem); // Log updated item
 
     try {
-      await updateTodo(updatedItem);
+      const response = await updateTodo(updatedItem); // This should hit the right URL
+      console.log('Update response:', response); // Log response from the API
       onEdit(updatedItem);
+      // Reset fields after a successful update
+      setTask('');
+      setDescription('');
     } catch (error) {
       console.error('Failed to update todo:', error);
     }
